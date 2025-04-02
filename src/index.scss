@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", serif;
+  height: 100vh;
+}
+
+#root {
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: 400px;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  .label {
+    font-size: 14px;
+  }
+}
+
+.flexi-tabs__tab-panels {
+  padding: 1rem 0;
+}
