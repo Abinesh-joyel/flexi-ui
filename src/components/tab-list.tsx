@@ -1,6 +1,7 @@
 import React, { Children, useRef } from "react";
-import usekeyBoardEvent from "../hooks/useKeyBoardEvent";
 import Tab from "./tab";
+import usekeyBoardEvent from "../hooks/useKeyBoardEvent";
+import { TabListProps } from "../types";
 
 const TabList: React.FC<TabListProps> = (props) => {
   const {
@@ -13,14 +14,12 @@ const TabList: React.FC<TabListProps> = (props) => {
     onTabChange = () => {},
   } = props;
 
-  const tabRef = useRef<HTMLButtonElement[]>([]);
+  const tabRef = useRef<(HTMLButtonElement | null)[]>([]);
   const totalTabs = Children.count(children);
-
   const { handleKeyDown } = usekeyBoardEvent(
     activeTabIndex as number,
     totalTabs,
     (index: number) => {
-      console.log(tabRef);
       onTabChange(index);
       tabRef.current[index]?.focus();
     }
@@ -31,7 +30,7 @@ const TabList: React.FC<TabListProps> = (props) => {
     if (!React.isValidElement(child) || childElement.type !== Tab) {
       return null;
     }
-    const tabId = childElement.props?.id || `tab-${index}`;
+    const tabId = `tab-${index}`;
     return React.cloneElement(child as React.ReactElement, {
       key: tabId,
       ref: (el: HTMLButtonElement) => (tabRef.current[index] = el),

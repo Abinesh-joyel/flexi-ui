@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/components/tabs.tsx"),
+      entry: resolve(__dirname, "src/index.tsx"),
       name: "react-flexi-tabs",
       // the proper extensions will be added
       fileName: "flexi-tabs",
@@ -34,7 +34,9 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      include: ["src/components", "src/types"],
+      include: ["src"],
+      exclude: ["src/App.tsx", "src/main.tsx"],
+      rollupTypes: false,
     }),
   ],
 });

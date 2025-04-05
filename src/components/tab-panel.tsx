@@ -1,12 +1,12 @@
-import { memo } from "react";
+import { TabPanelProps } from "../types";
 
 const TabPanel: React.FC<TabPanelProps> = (props) => {
-  const { children, isActive, id } = props;
+  const { children, tabPanelId, isActive } = props;
   return (
     <div
       className="tab-panels__tab-panel"
       role="tabPanel"
-      id={id}
+      id={tabPanelId}
       aria-hidden={!isActive}
       tabIndex={0}
     >
@@ -15,6 +15,4 @@ const TabPanel: React.FC<TabPanelProps> = (props) => {
   );
 };
 
-export default memo(TabPanel, (prevProps, nextProps) => {
-  return prevProps.isActive === nextProps.isActive;
-});
+export default TabPanel;

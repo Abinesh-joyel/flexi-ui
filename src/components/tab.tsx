@@ -1,8 +1,8 @@
 import React from "react";
+import { TabProps } from "../types";
 
 const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
   const {
-    id,
     children,
     index,
     activeTabIndex,
@@ -12,6 +12,7 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
   } = props;
   const isActive = activeTabIndex === index;
   const tabIndex = isActive ? 0 : -1;
+  const id = `tabpanel-${index}`;
   const onSelected = () => {
     onTabChange(index as number);
   };

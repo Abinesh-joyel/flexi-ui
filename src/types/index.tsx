@@ -1,6 +1,6 @@
-interface TabsProps {
+export interface TabsProps {
   children: React.ReactNode;
-  defaultValue: number;
+  defaultValue?: number;
   value?: number;
 }
 
@@ -16,7 +16,7 @@ type JustifyContent =
   | "center"
   | "end";
 
-interface TabListProps {
+export interface TabListProps {
   children: React.ReactNode;
   type?: TabType;
   justifyContent?: JustifyContent;
@@ -26,9 +26,8 @@ interface TabListProps {
   onTabChange?: (index: number) => void;
 }
 
-interface TabProps {
+export interface TabProps {
   children: React.ReactNode;
-  id: string;
   index?: number;
   className?: string;
   disabled?: boolean;
@@ -36,8 +35,8 @@ interface TabProps {
   onTabChange?: (index: number) => void;
 }
 
-interface TabPanelProps {
+export interface TabPanelProps {
   children: React.ReactNode;
-  id: string;
+  tabPanelId?: string;
   isActive?: boolean;
 }
