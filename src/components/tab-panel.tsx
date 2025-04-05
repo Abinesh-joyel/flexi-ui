@@ -1,6 +1,6 @@
-import { TabPanelProps } from "../types";
+import { TabPanelProps } from '../types';
 
-const TabPanel: React.FC<TabPanelProps> = (props) => {
+const TabPanel: React.FC<TabPanelProps> = props => {
   const { children, tabPanelId, isActive } = props;
   return (
     <div

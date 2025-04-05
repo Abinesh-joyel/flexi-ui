@@ -1,5 +1,5 @@
-import React from "react";
-import { TabProps } from "../types";
+import React from 'react';
+import { TabProps } from '../types';
 
 const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
   const {
@@ -7,7 +7,7 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
     index,
     activeTabIndex,
     disabled = false,
-    className = "tab-list__tab-item",
+    className = 'tab-list__tab-item',
     onTabChange = () => {},
   } = props;
   const isActive = activeTabIndex === index;

@@ -1,20 +1,19 @@
 export interface TabsProps {
   children: React.ReactNode;
-  defaultValue?: number;
   value?: number;
 }
 
-type TabType = "line" | "segment" | "card";
+type TabType = 'line' | 'segment' | 'card';
 
-type TabSize = "small" | "medium" | "large";
+type TabSize = 'small' | 'medium' | 'large';
 
 type JustifyContent =
-  | "space-between"
-  | "space-around"
-  | "space-evenly"
-  | "start"
-  | "center"
-  | "end";
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'start'
+  | 'center'
+  | 'end';
 
 export interface TabListProps {
   children: React.ReactNode;

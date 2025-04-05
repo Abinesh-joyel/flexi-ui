@@ -1,16 +1,16 @@
-import React, { Children, useRef } from "react";
-import Tab from "./tab";
-import usekeyBoardEvent from "../hooks/useKeyBoardEvent";
-import { TabListProps } from "../types";
+import React, { Children, useRef } from 'react';
+import Tab from './tab';
+import usekeyBoardEvent from '../hooks/useKeyBoardEvent';
+import { TabListProps } from '../types';
 
-const TabList: React.FC<TabListProps> = (props) => {
+const TabList: React.FC<TabListProps> = props => {
   const {
     children,
     activeTabIndex,
-    type = "line",
-    justifyContent = "start",
-    size = "small",
-    className = "tab-list",
+    type = 'line',
+    justifyContent = 'start',
+    size = 'small',
+    className = 'tab-list',
     onTabChange = () => {},
   } = props;
 

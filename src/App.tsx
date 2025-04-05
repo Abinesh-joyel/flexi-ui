@@ -1,5 +1,5 @@
-import { useState } from "react";
-import Tabs from "./components/tabs";
+import { useState } from 'react';
+import Tabs from './components/tabs';
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,22 +10,18 @@ function App() {
 
   return (
     <div className="app">
-      <Tabs defaultValue={0} value={activeTab}>
-        <Tabs.TabList onTabChange={onSelectedTab} className="tab-list">
-          <Tabs.Tab className="tab-item">
-            <i className="fa fa-eye"></i> {/* Icon from font-awesome V6 */}
+      <Tabs value={activeTab}>
+        <Tabs.TabList onTabChange={onSelectedTab}>
+          <Tabs.Tab>
             <span className="label">Eye</span>
           </Tabs.Tab>
-          <Tabs.Tab className="tab-item">
-            <i className="fa fa-comments"></i>
+          <Tabs.Tab>
             <span className="label">Comments</span>
           </Tabs.Tab>
-          <Tabs.Tab className="tab-item">
-            <i className="fa fa-bell"></i>
+          <Tabs.Tab>
             <span className="label">Bell</span>
           </Tabs.Tab>
-          <Tabs.Tab className="tab-item">
-            <i className="fa fa-cog"></i>
+          <Tabs.Tab>
             <span className="label">Cog</span>
           </Tabs.Tab>
         </Tabs.TabList>
