@@ -19,13 +19,15 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
   return (
     <button
       ref={ref}
-      className={`tab-list__tab ${className}`}
-      type="button"
       role="tab"
-      tabIndex={tabIndex}
+      type="button"
+      data-testid="tab"
       aria-controls={id}
-      aria-selected={isActive}
+      tabIndex={tabIndex}
       disabled={disabled}
+      aria-selected={isActive}
+      aria-disabled={disabled}
+      className={`tab-list__tab ${className}`}
       onClick={onSelected}
     >
       {children}

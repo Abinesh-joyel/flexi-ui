@@ -15,7 +15,11 @@ You can install the library using either `npm` or `yarn`:
 
 ```bash
 npm install --save react-flexi-tabs
+```
+
 or
+
+```bash
 yarn add react-flexi-tabs
 ```
 

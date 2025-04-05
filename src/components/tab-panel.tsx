@@ -4,11 +4,12 @@ const TabPanel: React.FC<TabPanelProps> = props => {
   const { children, tabPanelId, isActive } = props;
   return (
     <div
-      className="tab-panels__tab-panel"
+      tabIndex={0}
       role="tabPanel"
       id={tabPanelId}
+      data-testid="tab-panel"
       aria-hidden={!isActive}
-      tabIndex={0}
+      className="tab-panels__tab-panel"
     >
       {children}
     </div>

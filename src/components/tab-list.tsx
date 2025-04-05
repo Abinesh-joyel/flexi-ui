@@ -44,6 +44,7 @@ const TabList: React.FC<TabListProps> = props => {
     <div
       className={`flexi-tabs__tab-list flexi-tabs__tab-list--${type} ${justifyContent} ${size} ${className}`}
       role="tablist"
+      data-testid="tab-list"
       aria-orientation="horizontal"
       onKeyDown={handleKeyDown}
     >
