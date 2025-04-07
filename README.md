@@ -112,8 +112,8 @@ export default App;
 
 ## 🛣️ Roadmap
 
-- [] Vertical Orientation Support – Add support for vertical tab layouts (Currently horizontal only)
+- [x] Vertical Orientation Support – Add support for vertical tab layouts (Currently horizontal only)
 
-- [] RTL Support – Enable compatibility for RTL languages (e.g. Arabic, Hebrew)
+- [ ] RTL Support – Enable compatibility for RTL languages (e.g. Arabic, Hebrew)
 
-- [] Enhanced Animations & Transitions – Add smooth tab-switch animations
+- [ ] Enhanced Animations & Transitions – Add smooth tab-switch animations
