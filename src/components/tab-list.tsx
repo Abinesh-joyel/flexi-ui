@@ -8,9 +8,9 @@ const TabList: React.FC<TabListProps> = props => {
     children,
     activeTabIndex,
     type = 'line',
-    justifyContent = 'start',
     size = 'small',
     className = 'tab-list',
+    justifyContent = 'start',
     onTabChange = () => {},
   } = props;
 

@@ -90,7 +90,7 @@ export default App;
 | Prop             | Default Value | Explanation                                                                                                                                                     |
 | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `children`       | —             | Required. Should include one or more `Tabs.Tab` components.                                                                                                     |
-| `type`           | `"segment"`   | Optional. Defines the style of the tab list. Options: `"card"`, `"line"`, or `"segment"`.                                                                       |
+| `type`           | `"line"`      | Optional. Defines the style of the tab list. Options: `"card"`, `"line"`, or `"segment"`.                                                                       |
 | `className`      | `"tab-list"`  | Optional. Custom class name for styling the tab list container.                                                                                                 |
 | `justifyContent` | `"start"`     | Optional. Aligns tab items. Works only when `type` is `"line"`. Options: `"space-between"`, `"space-around"`, `"space-evenly"`, `"start"`, `"center"`, `"end"`. |
 | `size`           | `"small"`     | Optional. Size of the tab buttons. Options: `"small"`, `"medium"`, `"large"`.                                                                                   |
@@ -109,3 +109,11 @@ export default App;
 | Prop       | Default Value | Explanation                                      |
 | ---------- | ------------- | ------------------------------------------------ |
 | `children` | —             | Required. React element to display in the panel. |
+
+## 🛣️ Roadmap
+
+- [] Vertical Orientation Support – Add support for vertical tab layouts (Currently horizontal only)
+
+- [] RTL Support – Enable compatibility for RTL languages (e.g. Arabic, Hebrew)
+
+- [] Enhanced Animations & Transitions – Add smooth tab-switch animations
