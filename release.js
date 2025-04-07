@@ -1,6 +1,15 @@
 import { execSync } from 'child_process';
 import inquirer from 'inquirer';
 
+function isLatestCommitTagged() {
+  try {
+    const tags = execSync('git tag --points-at HEAD').toString().trim();
+    return tags.length > 0;
+  } catch (e) {
+    return false;
+  }
+}
+
 async function release() {
   try {
     const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
@@ -25,8 +34,8 @@ async function release() {
     }
 
     // Check for any changes
-    const changes = execSync('git status --porcelain').toString().trim();
-    if (!changes) {
+    // const changes = execSync('git status --porcelain').toString().trim();
+    if (isLatestCommitTagged()) {
       console.error('❌ No changes detected. Nothing to release.');
       process.exit(1);
     }
@@ -49,7 +58,7 @@ async function release() {
 
     console.log(`🚀 Releasing version using: ${versionArg}`);
 
-    execSync(`npm run version -- ${versionArg}`, { stdio: 'inherit' });
+    execSync(`yarn run version -- ${versionArg}`, { stdio: 'inherit' });
     execSync('git push --follow-tags origin', { stdio: 'inherit' });
 
     const latestTag = execSync('git describe --tags --abbrev=0')

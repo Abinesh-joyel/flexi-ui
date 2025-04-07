@@ -1,6 +1,7 @@
 {
   "name": "react-flexi-tabs",
-  "private": true,
+  "private": false,
+  "description": "A flexible and customizable tab component for React applications",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/flexi-tabs.umd.cjs",
