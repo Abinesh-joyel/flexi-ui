@@ -11,9 +11,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.tsx'),
-      name: 'react-flexi-tabs',
+      name: '@aj-ui/react-flexi-tabs',
       // the proper extensions will be added
-      fileName: 'flexi-tabs',
+      fileName: 'index',
       // cssFileName is not a valid property and has been removed
     },
     rollupOptions: {
@@ -35,7 +35,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       include: ['src'],
-      exclude: ['src/App.tsx', 'src/main.tsx'],
+      exclude: ['src/App.tsx', 'src/main.tsx', 'src/setupTests.ts'],
       rollupTypes: false,
     }),
   ],
