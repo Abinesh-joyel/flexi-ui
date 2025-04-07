@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.tsx'),
-      name: '@aj-ui/react-flexi-tabs',
+      name: '@flexi-ui/react-tabs',
       // the proper extensions will be added
       fileName: 'index',
       // cssFileName is not a valid property and has been removed

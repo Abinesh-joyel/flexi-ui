@@ -1,5 +1,5 @@
 {
-  "name": "@aj-ui/react-flexi-tabs",
+  "name": "@flexi-ui/react-tabs",
   "private": false,
   "description": "A flexible and customizable tab component for React applications",
   "keywords": [
@@ -10,7 +10,7 @@
     "accessible-tabs",
     "flexible-tabs"
   ],
-  "version": "0.0.2",
+  "version": "0.0.0",
   "type": "module",
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
@@ -31,9 +31,7 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "release": "node release.js",
-    "version": "standard-version"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -53,10 +51,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "inquirer": "^12.5.2",
     "jsdom": "^26.0.0",
     "sass-embedded": "^1.86.0",
-    "standard-version": "^9.5.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^4.5.3",
