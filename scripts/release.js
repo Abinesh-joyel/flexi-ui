@@ -59,8 +59,9 @@ async function main() {
   run('pnpm changeset version');
 
   // Step 3: Push commits + tags to GitHub
-  run('git push');
-  run('git push --follow-tags');
+  run('git add .');
+  run('git commit -m "chore: version bump"');
+  run('git push origin HEAD --follow-tags');
 
   // Step 4: Sync lockfile
   run('pnpm install');
@@ -69,7 +70,7 @@ async function main() {
   run('pnpm build');
 
   // Step 6: Publish changed packages
-  run('pnpm changeset publish');
+  run('pnpm changeset publish --access public');
 
   console.log(chalk.green('\n✅ Release complete!'));
 }

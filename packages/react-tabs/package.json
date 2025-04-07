@@ -1,6 +1,6 @@
 {
   "name": "@glide-ui/react-tabs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "description": "A flexible and customizable tab component for React applications",
   "keywords": [
