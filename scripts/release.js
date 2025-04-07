@@ -58,13 +58,17 @@ async function main() {
   // Step 2: Apply version bump
   run('pnpm changeset version');
 
-  // Step 3: Sync lockfile
+  // Step 3: Push commits + tags to GitHub
+  run('git push');
+  run('git push --follow-tags');
+
+  // Step 4: Sync lockfile
   run('pnpm install');
 
-  // ✅ Step 4: Build packages
+  // ✅ Step 5: Build packages
   run('pnpm build');
 
-  // Step 5: Publish changed packages
+  // Step 6: Publish changed packages
   run('pnpm changeset publish');
 
   console.log(chalk.green('\n✅ Release complete!'));
