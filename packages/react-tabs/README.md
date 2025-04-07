@@ -1,6 +1,6 @@
-# React-Flexi-Tabs
+# @glide-ui/react-tabs
 
-**React-Flexi-Tabs** is a lightweight, highly customizable **tab component library** for **React**. It provides a **flexible API** for building tab-based navigation systems with multiple styles, including **line-based tabs, segment-based tabs, and card-style tabs**. The library is built using **accessibility (ARIA-compliant)** in mind.
+**@glide-ui/react-tabs** is a lightweight, highly customizable **tab component library** for **React**. It provides a **flexible API** for building tab-based navigation systems with multiple styles, including **line-based tabs, segment-based tabs, and card-style tabs**. The library is built using **accessibility (ARIA-compliant)** in mind.
 
 ## 🚀 Features
 

@@ -70,7 +70,7 @@ async function main() {
   run('pnpm build');
 
   // Step 6: Publish changed packages
-  run('pnpm changeset publish --access public');
+  run('pnpm changeset publish');
 
   console.log(chalk.green('\n✅ Release complete!'));
 }
