@@ -59,9 +59,12 @@ async function main() {
   run('pnpm changeset version');
 
   // Step 3: Sync lockfile
+  run('pnpm install');
+
+  // ✅ Step 4: Build packages
   run('pnpm build');
 
-  // Step 4: Publish changed packages
+  // Step 5: Publish changed packages
   run('pnpm changeset publish');
 
   console.log(chalk.green('\n✅ Release complete!'));
