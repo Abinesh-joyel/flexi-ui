@@ -1,7 +1,15 @@
 {
-  "name": "react-flexi-tabs",
+  "name": "@aj-ui/react-flexi-tabs",
   "private": false,
   "description": "A flexible and customizable tab component for React applications",
+  "keywords": [
+    "react",
+    "tabs",
+    "ally",
+    "react-component",
+    "accessible-tabs",
+    "flexible-tabs"
+  ],
   "version": "0.0.2",
   "type": "module",
   "main": "./dist/flexi-tabs.umd.cjs",
@@ -53,5 +61,8 @@
     "vite": "^5.2.0",
     "vite-plugin-dts": "^4.5.3",
     "vitest": "^3.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

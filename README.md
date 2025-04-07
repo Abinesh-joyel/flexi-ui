@@ -14,13 +14,13 @@
 You can install the library using either `npm` or `yarn`:
 
 ```bash
-npm install --save react-flexi-tabs
+npm install --save @aj-ui/react-flexi-tabs
 ```
 
 or
 
 ```bash
-yarn add react-flexi-tabs
+yarn add @aj-ui/react-flexi-tabs
 ```
 
 ## Controlled Tabs Example
