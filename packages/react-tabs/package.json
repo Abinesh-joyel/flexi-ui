@@ -6,6 +6,12 @@
   },
   "private": false,
   "description": "A flexible and customizable tab component for React applications",
+  "author": "Abinesh Joyel",
+  "homepage": "https://github.com/Abinesh-joyel/glide-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abinesh-joyel/glide-ui/tree/master/packages/react-tabs"
+  },
   "keywords": [
     "react",
     "tabs",

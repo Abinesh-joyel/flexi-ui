@@ -3,3 +3,5 @@
 ✅ pnpm changeset version → Bump versions and update changelogs
 
 ✅ pnpm changeset publish → Publish changed packages to NPM
+
+pnpm publish --filter @glide-ui/react-tabs -> publish the updated files in npm

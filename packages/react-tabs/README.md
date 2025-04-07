@@ -14,20 +14,21 @@
 You can install the library using either `npm` or `yarn`:
 
 ```bash
-npm install --save @aj-ui/react-flexi-tabs
+npm install --save @glide-ui/react-tabs
 ```
 
 or
 
 ```bash
-yarn add @aj-ui/react-flexi-tabs
+yarn add @glide-ui/react-tabs
 ```
 
 ## Controlled Tabs Example
 
 ```tsx
 import React, { useState } from 'react';
-import { Tabs } from 'react-flexi-tabs';
+import Tabs from '@glide-ui/react-tabs';
+import '@glide-ui/react-tabs/style.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
@@ -40,16 +41,16 @@ function App() {
     <Tabs value={activeTab}>
       <Tabs.TabList onTabChange={onSelectedTab}>
         <Tabs.Tab>
-          <span className="label">Eye</span>
+          <span>Eye</span>
         </Tabs.Tab>
         <Tabs.Tab>
-          <span className="label">Comments</span>
+          <span>Comments</span>
         </Tabs.Tab>
         <Tabs.Tab>
-          <span className="label">Bell</span>
+          <span>Bell</span>
         </Tabs.Tab>
         <Tabs.Tab>
-          <span className="label">Cog</span>
+          <span>Cog</span>
         </Tabs.Tab>
       </Tabs.TabList>
 
