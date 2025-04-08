@@ -59,9 +59,7 @@ async function main() {
   run('pnpm changeset version');
 
   // Step 3: Push commits + tags to GitHub
-  run('git add .');
-  run('git commit -m "chore: version bump"');
-  run('git push origin HEAD --follow-tags');
+  run('git push --follow-tags');
 
   // Step 4: Sync lockfile
   run('pnpm install');

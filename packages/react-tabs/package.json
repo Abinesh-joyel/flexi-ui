@@ -7,6 +7,7 @@
   "private": false,
   "description": "A flexible and customizable tab component for React applications",
   "author": "Abinesh Joyel",
+  "license": "MIT",
   "homepage": "https://github.com/Abinesh-joyel/glide-ui",
   "repository": {
     "type": "git",
