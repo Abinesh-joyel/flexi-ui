@@ -35,7 +35,12 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       include: ['src'],
-      exclude: ['src/App.tsx', 'src/main.tsx', 'src/setupTests.ts'],
+      exclude: [
+        'src/App.tsx',
+        'src/main.tsx',
+        'src/setupTests.ts',
+        'src/__tests__',
+      ],
       rollupTypes: false,
     }),
   ],

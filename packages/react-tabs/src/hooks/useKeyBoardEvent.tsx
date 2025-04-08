@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface KeyboardEvent {
   handleKeyDown: (event: React.KeyboardEvent) => void;
@@ -28,16 +28,24 @@ export default function usekeyBoardEvent(
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    console.log("event", event);
+    console.log('event', event);
 
     switch (event.key) {
-      case "ArrowLeft":
+      case 'ArrowLeft':
         event.preventDefault();
         onPrevTab();
         break;
-      case "ArrowRight":
+      case 'ArrowRight':
         event.preventDefault();
         onNextTab();
+        break;
+      case 'Home':
+        event.preventDefault();
+        onChange(0);
+        break;
+      case 'End':
+        event.preventDefault();
+        onChange(total - 1);
         break;
       default:
         break;

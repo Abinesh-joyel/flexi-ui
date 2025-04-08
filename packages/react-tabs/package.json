@@ -13,6 +13,9 @@
     "type": "git",
     "url": "https://github.com/Abinesh-joyel/glide-ui/tree/master/packages/react-tabs"
   },
+  "bugs": {
+    "url": "https://github.com/Abinesh-joyel/glide-ui/issues"
+  },
   "keywords": [
     "react",
     "tabs",
