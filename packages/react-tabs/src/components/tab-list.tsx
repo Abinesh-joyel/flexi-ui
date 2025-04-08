@@ -42,7 +42,7 @@ const TabList: React.FC<TabListProps> = props => {
 
   return (
     <div
-      className={`flexi-tabs__tab-list flexi-tabs__tab-list--${type} ${justifyContent} ${size} ${className}`}
+      className={`glide-ui-tabs__tab-list glide-ui-tabs__tab-list--${type} ${justifyContent} ${size} ${className}`}
       role="tablist"
       data-testid="tab-list"
       aria-orientation="horizontal"

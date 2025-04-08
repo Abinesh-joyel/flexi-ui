@@ -1,7 +1,7 @@
-@use "./variables.scss" as *;
-@use "./utility.scss" as *;
+@use './variables.scss' as *;
+@use './utility.scss' as *;
 
-.flexi-tabs {
+.glide-ui-tabs {
   width: 100%;
 
   &__tab-list {
@@ -39,14 +39,14 @@
 
   // tab hover | tab selected
   &__tab:hover,
-  &__tab[aria-selected="true"] {
+  &__tab[aria-selected='true'] {
     color: $color-primary;
   }
 
   // tab disabled
   &__tab:disabled {
-      cursor: default;
-      color: $color-tab-disabled;
+    cursor: default;
+    color: $color-tab-disabled;
   }
 }
 
@@ -59,19 +59,18 @@
     margin-bottom: 1rem;
   }
 
-  &__tab-panel[aria-hidden="false"] {
+  &__tab-panel[aria-hidden='false'] {
     display: block;
   }
 }
 
-.flexi-tabs__tab-list {
-
+.glide-ui-tabs__tab-list {
   &--line {
     display: flex;
     .tab-list__tab {
       padding: 0.5rem 1rem;
     }
-    .tab-list__tab[aria-selected="true"] .tab-list__indicator {
+    .tab-list__tab[aria-selected='true'] .tab-list__indicator {
       display: block;
     }
   }
@@ -82,7 +81,7 @@
     .tab-list__tab {
       flex: 1;
     }
-    .tab-list__tab[aria-selected="true"] {
+    .tab-list__tab[aria-selected='true'] {
       border-radius: 4px;
       background-color: $color-white;
     }
@@ -92,13 +91,13 @@
     .tab-list__tab {
       padding: 0.5rem 1rem;
     }
-    .tab-list__tab[aria-selected="true"] {
+    .tab-list__tab[aria-selected='true'] {
       box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2);
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
       background-color: $color-card-background;
     }
-    .tab-list__tab[aria-selected="true"] .tab-list__indicator {
+    .tab-list__tab[aria-selected='true'] .tab-list__indicator {
       display: block;
       height: 1px;
       background-color: $color-white;

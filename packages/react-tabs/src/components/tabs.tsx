@@ -39,12 +39,14 @@ const Tabs: React.FC<TabsProps> & TabsExtend = props => {
   };
 
   return (
-    <div className="flexi-tabs">
+    <div className="glide-ui-tabs">
       {cloneElement(tabsListChild as React.ReactElement, {
         activeTabIndex,
       })}
 
-      <div className="flexi-tabs__tab-panels">{restChild.map(renderChild)}</div>
+      <div className="glide-ui-tabs__tab-panels">
+        {restChild.map(renderChild)}
+      </div>
     </div>
   );
 };
