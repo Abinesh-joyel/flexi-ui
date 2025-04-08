@@ -58,11 +58,6 @@ async function main() {
   // Step 2: Apply version bump
   run('pnpm changeset version');
 
-  // Step 3: Commit changeset version bump and changelog, finally push the changes
-  run('git add .');
-  run('git commit -m "chore(release): version bump and changelog"');
-  run('git push');
-
   // Step 4: Sync lockfile
   run('pnpm install');
 
