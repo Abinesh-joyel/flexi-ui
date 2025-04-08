@@ -1,5 +1,12 @@
 ## 0.0.2
 
+## 0.0.3
+
+### Patch Changes
+
+- Corrected the role attribute for the TabPanel to tabpanel.
+  Added aria-labelledby to the TabPanel, referencing the associated Tab's ID for improved accessibility.
+
 ### Patch Changes
 
 Support Home and End key navigation in Tabs component
