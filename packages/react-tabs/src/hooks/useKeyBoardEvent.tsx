@@ -28,8 +28,6 @@ export default function usekeyBoardEvent(
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    console.log('event', event);
-
     switch (event.key) {
       case 'ArrowLeft':
         event.preventDefault();
