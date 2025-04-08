@@ -1,3 +1,12 @@
+## 0.0.2
+
+### Patch Changes
+
+Support Home and End key navigation in Tabs component
+
+- **Home key** → moves focus to the **first tab**
+- **End key** → moves focus to the **last tab**
+
 ## 0.0.1
 
 ### Patch Changes
