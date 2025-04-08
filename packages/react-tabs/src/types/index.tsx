@@ -36,6 +36,6 @@ export interface TabProps {
 
 export interface TabPanelProps {
   children: React.ReactNode;
-  tabPanelId?: string;
+  index?: number;
   isActive?: boolean;
 }

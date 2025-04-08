@@ -33,8 +33,8 @@ const Tabs: React.FC<TabsProps> & TabsExtend = props => {
     const isActive = index === activeTabIndex;
     return cloneElement(childElement, {
       key: tabPanelId,
-      tabPanelId,
       isActive,
+      index,
     });
   };
 
