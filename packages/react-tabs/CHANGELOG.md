@@ -1,11 +1,11 @@
-## 0.0.2
-
 ## 0.0.3
 
 ### Patch Changes
 
 - Corrected the role attribute for the TabPanel to tabpanel.
-  Added aria-labelledby to the TabPanel, referencing the associated Tab's ID for improved accessibility.
+- Added aria-labelledby to the TabPanel, referencing the associated Tab's ID for improved accessibility.
+
+## 0.0.2
 
 ### Patch Changes
 
