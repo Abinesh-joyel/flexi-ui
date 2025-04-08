@@ -50,12 +50,17 @@ async function main() {
 
   // Step 1: Create a changeset
   if (releaseType !== 'custom') {
-    run(`pnpm changeset --${releaseType} --empty`);
+    run(`pnpm changeset --${releaseType}`);
   } else {
     run(`pnpm changeset`);
   }
 
-  // Step 2: Apply version bump
+  // Step 2: Commit the version bump and changelog
+  run('git add .');
+  run('git commit -m "chore(release): version bump and changelog"');
+  run('git push');
+
+  // Step 3: Apply version bump
   run('pnpm changeset version');
 
   // Step 4: Sync lockfile
