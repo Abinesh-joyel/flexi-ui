@@ -50,7 +50,7 @@ async function main() {
 
   // Step 1: Create a changeset
   if (releaseType !== 'custom') {
-    run(`pnpm changeset --${releaseType}`);
+    run(`pnpm changeset --${releaseType} --empty`);
   } else {
     run(`pnpm changeset`);
   }
