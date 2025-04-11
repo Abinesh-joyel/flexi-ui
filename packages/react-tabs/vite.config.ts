@@ -12,9 +12,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.tsx'),
       name: '@glide-ui/react-tabs',
-      // the proper extensions will be added
       fileName: 'index',
-      // cssFileName is not a valid property and has been removed
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -35,13 +33,15 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       include: ['src'],
-      exclude: [
-        'src/App.tsx',
-        'src/main.tsx',
-        'src/setupTests.ts',
-        'src/__tests__',
-      ],
+      exclude: ['src/App.tsx', 'src/main.tsx'],
       rollupTypes: false,
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
 });

@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".", // enables absolute imports
     "paths": {
-      "*": ["node_modules/*"]
-    }
-  }
+      "@glide-ui/*": ["packages/*/src"]
+    },
+  },
+  "include": ["packages", "apps"],
+  "exclude": ["dist", "build", "node_modules"],
 }
