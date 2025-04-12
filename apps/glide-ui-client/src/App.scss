@@ -1,0 +1,105 @@
+$color-primary: #00a8ff;
+$color-link-background: #f5f6fa;
+$color-note: #7f8fa6;
+$color-border: #f5f6fa;
+$color-white: #fff;
+
+main {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ml-1 {
+    margin-left: 0.25rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.card {
+    width: 100%;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), -1px -1px 2px 0 rgba(0, 0, 0, 0.1);
+    .card-content {
+        padding: 1rem;
+    }
+    .card-footer {
+        border-top: 1px solid $color-border;
+        padding: 1rem;
+        a {
+            color: $color-primary;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.sidebar {
+    width: 260px;
+    box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    padding: 1rem 0;
+    h2 {
+        text-align: center;
+        color: $color-primary;
+        margin-bottom: 1rem;
+    }
+    li a {
+        display: inline-block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #000;
+        &:hover {
+            background-color: $color-link-background;
+            color: $color-primary
+        }
+    }
+}
+
+.main-content {
+    flex: 1;
+    padding: 1rem 2rem;
+}
+
+.tabs-view {
+    h2 {
+        color: $color-primary;
+        @extend .mb-3;
+    }
+}
+
+.tab-view {
+    .form-control {
+        margin-bottom: 1rem;
+    }
+    .radio-group {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .radio-type,
+    .radio-size,
+    .radio-justify {
+        display: flex;
+        align-items: center;
+        * {
+            cursor: pointer;
+        }
+        label {
+            padding-left: 0.25rem;
+        }
+    }
+
+    .radio-note {
+        color: $color-note;
+    }
+}

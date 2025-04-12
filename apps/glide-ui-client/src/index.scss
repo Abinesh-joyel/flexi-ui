@@ -10,13 +10,3 @@ body {
   font-family: 'Open Sans', serif;
   min-height: 100vh;
 }
-
-.tab-item {
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
-
-  .label {
-    font-size: 14px;
-  }
-}

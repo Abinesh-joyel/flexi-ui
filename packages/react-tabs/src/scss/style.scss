@@ -56,10 +56,6 @@
     display: none;
   }
 
-  &__tab-panel h3 {
-    margin-bottom: 1rem;
-  }
-
   // tab panel active | tab panel selected
   &__tab-panel[aria-hidden='false'] {
     display: block;
