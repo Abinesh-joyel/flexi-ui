@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Build project
-        run: pnpm --filter glide-ui-client build
+        run: pnpm build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
