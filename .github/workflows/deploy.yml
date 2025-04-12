@@ -30,8 +30,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build project
-        run: pnpm build
+      - name: Build @glide-ui/react-tabs
+        run: pnpm --filter @glide-ui/react-tabs build
+
+      - name: Build glide-ui-client
+        run: pnpm --filter glide-ui-client build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
