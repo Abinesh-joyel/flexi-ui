@@ -51,24 +51,21 @@ async function main() {
   // Step 1: Create a changeset
   run('pnpm changeset');
 
-  // Step 2: Commit the version bump and changelog
-  run('git add .');
-  run('git commit -m "chore(release): version bump and changelog"');
-  run('git push');
-
-  // Step 3: Apply version bump
+  // Step 2: Apply version bump
   run('pnpm changeset version');
 
-  // Step 4: Sync lockfile
+  // Step 3: Sync lockfile
   run('pnpm install');
 
-  // ✅ Step 5: Build packages
+  // Step 4: Build packages
   run('pnpm build');
 
-  // Step 6: Publish changed packages
+  // Step 5: Publish changed packages
   run('pnpm changeset publish');
 
-  // Step 7: Push the published tags
+  // Step 6: Commit and Push the published tags
+  run('git add .');
+  run('git commit -m "chore(release): version bump and changelog"');
   run('git push --follow-tags');
 
   console.log(chalk.green('\n✅ Release complete!'));
