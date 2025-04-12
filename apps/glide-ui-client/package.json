@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router-dom": "^6.30.0",
+    "@glide-ui/react-tabs": "workspace:*"
+  },
   "devDependencies": {}
 }

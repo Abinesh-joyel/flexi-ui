@@ -1,30 +1,53 @@
 import { useState } from 'react';
-import viteLogo from '/vite.svg';
-import './App.css';
+import Tabs from '@glide-ui/react-tabs';
+import '@glide-ui/react-tabs/style.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const onSelectedTab = (index: number) => {
+    setActiveTab(index);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app">
+      <Tabs value={activeTab}>
+        <Tabs.TabList onTabChange={onSelectedTab}>
+          <Tabs.Tab>
+            <span className="label">Eye</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Comments</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Bell</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Cog</span>
+          </Tabs.Tab>
+        </Tabs.TabList>
+
+        <Tabs.TabPanel>
+          <h3>Dashboard</h3>
+          <p>Welcome to the Dashboard</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Comments</h3>
+          <p>Welcome to the Comments section</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Notifications</h3>
+          <p>No Notfications available</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Settings</h3>
+          <p>No Settings available</p>
+        </Tabs.TabPanel>
+      </Tabs>
+    </div>
   );
 }
 

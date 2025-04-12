@@ -1,10 +1,58 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import './index.scss';
+import { StrictMode, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import Tabs from './index';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+function App() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const onSelectedTab = (index: number) => {
+    setActiveTab(index);
+  };
+
+  return (
+    <div className="app">
+      <Tabs value={activeTab}>
+        <Tabs.TabList onTabChange={onSelectedTab}>
+          <Tabs.Tab>
+            <span className="label">Eye</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Comments</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Bell</span>
+          </Tabs.Tab>
+          <Tabs.Tab>
+            <span className="label">Cog</span>
+          </Tabs.Tab>
+        </Tabs.TabList>
+
+        <Tabs.TabPanel>
+          <h3>Dashboard</h3>
+          <p>Welcome to the Dashboard</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Comments</h3>
+          <p>Welcome to the Comments section</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Notifications</h3>
+          <p>No Notfications available</p>
+        </Tabs.TabPanel>
+
+        <Tabs.TabPanel>
+          <h3>Settings</h3>
+          <p>No Settings available</p>
+        </Tabs.TabPanel>
+      </Tabs>
+    </div>
+  );
+}
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );

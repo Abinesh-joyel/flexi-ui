@@ -3,7 +3,6 @@ import TabPanel from './tab-panel';
 import TabList from './tab-list';
 import Tab from './tab';
 import { TabsProps, TabPanelProps, TabListProps, TabProps } from '../types';
-import '../scss/style.scss';
 
 interface TabsExtend {
   TabPanel: React.FC<TabPanelProps>;

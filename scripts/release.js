@@ -21,39 +21,35 @@ async function main() {
 
   console.log(chalk.cyan(`🔍 Current branch: ${branch}`));
 
-  const { releaseType } = await prompts({
-    type: 'select',
-    name: 'releaseType',
-    message: 'Select release type',
-    choices: [
-      { title: 'Patch', value: 'patch' },
-      { title: 'Minor', value: 'minor' },
-      { title: 'Major', value: 'major' },
-      { title: 'Custom (hotfix or prerelease)', value: 'custom' },
-      { title: 'Cancel', value: 'cancel' },
-    ],
-  });
+  // const { releaseType } = await prompts({
+  //   type: 'select',
+  //   name: 'releaseType',
+  //   message: 'Select release type',
+  //   choices: [
+  //     { title: 'Patch', value: 'patch' },
+  //     { title: 'Minor', value: 'minor' },
+  //     { title: 'Major', value: 'major' },
+  //     { title: 'Custom (hotfix or prerelease)', value: 'custom' },
+  //     { title: 'Cancel', value: 'cancel' },
+  //   ],
+  // });
 
-  if (releaseType === 'cancel') {
-    console.log(chalk.yellow('🛑 Release cancelled.'));
-    return;
-  }
+  // if (releaseType === 'cancel') {
+  //   console.log(chalk.yellow('🛑 Release cancelled.'));
+  //   return;
+  // }
 
-  if (!isMainBranch && releaseType !== 'custom') {
+  if (!isMainBranch) {
     console.error(
       chalk.red(
-        `🚫 Only 'custom' releases are allowed on non-master branches. Please switch to 'master' or use 'custom' release.`
+        `🚫 Only releases are allowed from master branches. Please switch to master branch for release.`
       )
     );
     process.exit(1);
   }
 
   // Step 1: Create a changeset
-  if (releaseType !== 'custom') {
-    run(`pnpm changeset --${releaseType}`);
-  } else {
-    run(`pnpm changeset`);
-  }
+  run('pnpm changeset');
 
   // Step 2: Commit the version bump and changelog
   run('git add .');
