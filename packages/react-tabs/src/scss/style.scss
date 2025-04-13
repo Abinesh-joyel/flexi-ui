@@ -1,108 +1,126 @@
 @use './variables.scss' as *;
 @use './utility.scss' as *;
 
-.glide-ui-tabs {
+.glide-ui-tabs.horizontal {
   width: 100%;
 
-  &__tab-list {
+  .glide-ui-tab-list {
+    display: flex;
     width: 100%;
     background-color: $color-white;
-    border-bottom: 1px solid rgb(239, 239, 245);
-  }
-
-  &__tab-panels {
-    position: relative;
+    border-bottom: 1px solid $color-border-color;
   }
 }
 
-.tab-list {
-  &__tab {
+.glide-ui-tabs.vertical {
+  width: 100%;
+  display: flex;
+
+  .glide-ui-tab-list {
+    min-width: 160px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $color-border-color;
+  }
+
+  .glide-ui-tab-panels {
+    flex: 1;
+  }
+}
+
+.glide-ui-tab-list {
+  .glide-ui-tab-item {
     position: relative;
     border: none;
     font-size: 1rem;
-    padding: 0.75rem 0;
-    color: $color-tab-inactive;
+    padding: 0.75rem 0.5rem;
     background-color: transparent;
+    color: $color-tab-inactive;
     cursor: pointer;
     transition: all 0.2s;
     font-family: inherit;
+    .tab-item-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      width: 100%;
+    }
   }
 
-  &__indicator {
+  .tab-item-indicator {
     position: absolute;
-    height: 2px;
-    left: 0;
-    right: 0;
-    bottom: -1px;
     background-color: $color-primary;
     display: none;
   }
 
   // tab hover | tab selected
-  &__tab:hover,
-  &__tab[aria-selected='true'] {
+  .glide-ui-tab-item:hover,
+  .glide-ui-tab-item[aria-selected='true'] {
     color: $color-primary;
   }
 
   // tab disabled
-  &__tab:disabled {
+  .glide-ui-tab-item:disabled {
     cursor: default;
     color: $color-tab-disabled;
   }
-}
 
-.tab-panels {
-  &__tab-panel {
-    display: none;
+  &.small .glide-ui-tab-item {
+    font-size: 0.875rem;
   }
 
-  // tab panel active | tab panel selected
-  &__tab-panel[aria-hidden='false'] {
-    display: block;
+  &.large .glide-ui-tab-item {
+    font-size: 1.125rem;
   }
 }
 
-.glide-ui-tabs__tab-list {
-  &--line {
-    display: flex;
-    .tab-list__tab {
+.glide-ui-tab-list[aria-orientation='horizontal'] {
+  .tab-item-indicator {
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+  }
+  &.tab-type-line {
+    .glide-ui-tab-item {
       padding: 0.5rem 1rem;
     }
-    .tab-list__tab[aria-selected='true'] .tab-list__indicator {
+    .glide-ui-tab-item[aria-selected='true'] .tab-item-indicator {
       display: block;
     }
   }
-  &--segment {
+  &.tab-type-segment {
     background-color: $color-segment-background;
     padding: 4px;
-    display: flex;
-    .tab-list__tab {
+    .glide-ui-tab-item {
       flex: 1;
     }
-    .tab-list__tab[aria-selected='true'] {
+    .glide-ui-tab-item[aria-selected='true'] {
       border-radius: 4px;
       background-color: $color-white;
     }
   }
-  &--card {
-    display: flex;
-    .tab-list__tab {
+  &.tab-type-card {
+    .glide-ui-tab-item {
       padding: 0.5rem 1rem;
     }
-    .tab-list__tab[aria-selected='true'] {
-      box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2);
+    .glide-ui-tab-item[aria-selected='true'] {
+      box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.1),
+        1px 0 1px 0 rgba(0, 0, 0, 0.1);
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
       background-color: $color-card-background;
     }
-    .tab-list__tab[aria-selected='true'] .tab-list__indicator {
+    .glide-ui-tab-item[aria-selected='true'] .tab-item-indicator {
       display: block;
       height: 1px;
       background-color: $color-white;
     }
   }
 
-  &--line {
+  &.tab-type-line {
     &.space-between {
       @extend .justify-space-between;
     }
@@ -122,12 +140,51 @@
       @extend .justify-center;
     }
   }
+}
 
-  &.medium .tab-list__tab {
-    font-size: 1.25rem;
+.glide-ui-tab-list[aria-orientation='vertical'] {
+  .tab-item-indicator {
+    width: 2px;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+  }
+  &.tab-type-line {
+    .glide-ui-tab-item[aria-selected='true'] .tab-item-indicator {
+      display: block;
+    }
+  }
+  &.tab-type-segment {
+    background-color: $color-segment-background;
+    padding: 4px;
+    .glide-ui-tab-item[aria-selected='true'] {
+      background-color: $color-white;
+      border-radius: 4px;
+    }
+  }
+  &.tab-type-card {
+    .glide-ui-tab-item[aria-selected='true'] {
+      background-color: $color-card-background;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.1),
+        0 1px 1px 0 rgba(0, 0, 0, 0.1);
+      .tab-item-indicator {
+        display: block;
+        width: 1px;
+        background-color: $color-white;
+      }
+    }
+  }
+}
+
+.glide-ui-tab-panels {
+  .glide-ui-tab-panel {
+    display: none;
   }
 
-  &.large .tab-list__tab {
-    font-size: 1.5rem;
+  // tab panel active | tab panel selected
+  .glide-ui-tab-panel[aria-hidden='false'] {
+    display: block;
   }
 }

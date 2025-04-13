@@ -11,11 +11,13 @@ type JustifyContent =
   | 'start'
   | 'center'
   | 'end';
+type Orientation = 'horizontal' | 'vertical';
 
 const TabBasic = () => {
   const [type, setType] = useState<Type>('line');
-  const [size, setSize] = useState<Size>('small');
+  const [size, setSize] = useState<Size>('medium');
   const [justifyContent, setJustifyContent] = useState<JustifyContent>('start');
+  const [orientation, setOrientation] = useState<Orientation>('horizontal');
   const [activeTab, setActiveTab] = useState(0);
 
   const onSelectedTab = (index: number) => {
@@ -24,7 +26,9 @@ const TabBasic = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    if (name === 'type') {
+    if (name === 'orientation') {
+      setOrientation(value as Orientation);
+    } else if (name === 'type') {
       setType(value as Type);
     } else if (name === 'size') {
       setSize(value as Size);
@@ -38,8 +42,32 @@ const TabBasic = () => {
       <div className="card-content">
         <div className="form-group">
           <div className="form-control radio-group">
+            <h4>Orientation:</h4>
+            <div className="radio-orientation radio-horizontal">
+              <input
+                type="radio"
+                name="orientation"
+                id="horizontal"
+                value="horizontal"
+                defaultChecked
+                onChange={handleChange}
+              />
+              <label htmlFor="horizontal">Horizontal</label>
+            </div>
+            <div className="radio-orientation radio-horizontal">
+              <input
+                type="radio"
+                name="orientation"
+                id="vertical"
+                value="vertical"
+                onChange={handleChange}
+              />
+              <label htmlFor="vertical">Vertical</label>
+            </div>
+          </div>
+          <div className="form-control radio-group">
             <h4>Type:</h4>
-            <div className="radio-type">
+            <div className="radio-type radio-horizontal">
               <input
                 type="radio"
                 name="type"
@@ -50,7 +78,7 @@ const TabBasic = () => {
               />
               <label htmlFor="line">Line</label>
             </div>
-            <div className="radio-type">
+            <div className="radio-type radio-horizontal">
               <input
                 type="radio"
                 id="segment"
@@ -60,7 +88,7 @@ const TabBasic = () => {
               />
               <label htmlFor="segment">Segment</label>
             </div>
-            <div className="radio-type">
+            <div className="radio-type radio-horizontal">
               <input
                 type="radio"
                 id="card"
@@ -73,28 +101,28 @@ const TabBasic = () => {
           </div>
           <div className="form-control radio-group">
             <h4>Size:</h4>
-            <div className="radio-size">
+            <div className="radio-size radio-horizontal">
               <input
                 type="radio"
                 id="small"
                 name="size"
                 value="small"
-                defaultChecked
                 onChange={handleChange}
               />
               <label htmlFor="small">Small</label>
             </div>
-            <div className="radio-size">
+            <div className="radio-size radio-horizontal">
               <input
                 type="radio"
                 id="medium"
                 name="size"
                 value="medium"
+                defaultChecked
                 onChange={handleChange}
               />
               <label htmlFor="medium">Medium</label>
             </div>
-            <div className="radio-size">
+            <div className="radio-size radio-horizontal">
               <input
                 type="radio"
                 id="large"
@@ -108,7 +136,7 @@ const TabBasic = () => {
           <div className="form-control">
             <div className="radio-group">
               <h4>Justify content:</h4>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="start"
@@ -119,7 +147,7 @@ const TabBasic = () => {
                 />
                 <label htmlFor="start">Start</label>
               </div>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="center"
@@ -129,7 +157,7 @@ const TabBasic = () => {
                 />
                 <label htmlFor="center">Center</label>
               </div>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="end"
@@ -139,7 +167,7 @@ const TabBasic = () => {
                 />
                 <label htmlFor="end">End</label>
               </div>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="space-between"
@@ -149,7 +177,7 @@ const TabBasic = () => {
                 />
                 <label htmlFor="space-between">Space Between</label>
               </div>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="space-around"
@@ -159,7 +187,7 @@ const TabBasic = () => {
                 />
                 <label htmlFor="space-around">Space Around</label>
               </div>
-              <div className="radio-justify">
+              <div className="radio-justify radio-horizontal">
                 <input
                   type="radio"
                   id="space-evenly"
@@ -170,11 +198,13 @@ const TabBasic = () => {
                 <label htmlFor="space-evenly">Space Evenly</label>
               </div>
             </div>
-            <small className="radio-note">Only works if tab type is line</small>
+            <small className="radio-note">
+              Only works if tab type is line and orientation horizontal
+            </small>
           </div>
         </div>
 
-        <Tabs value={activeTab}>
+        <Tabs value={activeTab} orientation={orientation}>
           <Tabs.TabList
             type={type}
             size={size}

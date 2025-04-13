@@ -7,6 +7,7 @@ interface KeyboardEvent {
 export default function usekeyBoardEvent(
   index: number,
   total: number,
+  orientation: string,
   onChange: (index: number) => void
 ): KeyboardEvent {
   const onPrevTab = () => {
@@ -28,12 +29,23 @@ export default function usekeyBoardEvent(
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (
+      (orientation === 'horizontal' &&
+        ['ArrowUp', 'ArrowDown'].includes(event.key)) ||
+      (orientation === 'vertical' &&
+        ['ArrowLeft', 'ArrowRight'].includes(event.key))
+    ) {
+      return;
+    }
+
     switch (event.key) {
       case 'ArrowLeft':
+      case 'ArrowUp':
         event.preventDefault();
         onPrevTab();
         break;
       case 'ArrowRight':
+      case 'ArrowDown':
         event.preventDefault();
         onNextTab();
         break;

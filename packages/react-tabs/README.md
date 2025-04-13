@@ -4,7 +4,7 @@
 
 ## 🚀 Features
 
-- ✅ **Customizable** – Easily style tabs using class-based or BEM-style selectors.
+- ✅ **Customizable** – Easily style tabs using class-based selectors and flexible props.
 - ✅ **Multiple Styles** – Supports **line, segment, and card-based tabs** out of the box.
 - ✅ **Accessible (ARIA Support)** – Ensures keyboard and screen-reader compatibility. _(More enhancements coming soon!)_
 - ✅ **Composable & Extendable** – Implements the **Compound Component Pattern** for better flexibility.
@@ -22,6 +22,10 @@ or
 ```bash
 yarn add @glide-ui/react-tabs
 ```
+
+## Demo
+
+Check out the [Demo Usage](https://abinesh-joyel.github.io/glide-ui/)
 
 ## Controlled Tabs Example
 
@@ -81,10 +85,11 @@ export default App;
 
 ### Tabs Component – API Props
 
-| Prop       | Default Value | Explanation                                                                                                                                                             |
-| ---------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children` | —             | Required. Should include one `Tabs.TabList` and one or more `Tabs.TabPanel`.                                                                                            |
-| `value`    | `0`           | Required. Index of the active tab. Used to control the selected tab programmatically. Listen to `onTabChange` event on `Tabs.TabList` component to get the active index |
+| Prop          | Default Value  | Explanation                                                                                                                                                             |
+| ------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`    | —              | Required. Should include one `Tabs.TabList` and one or more `Tabs.TabPanel`.                                                                                            |
+| `orientation` | `"horizontal"` | optional. Defines the orientation of the tab. Options: `"horizontal",        vertical`.                                                                                 |
+| `value`       | `0`            | Required. Index of the active tab. Used to control the selected tab programmatically. Listen to `onTabChange` event on `Tabs.TabList` component to get the active index |
 
 ### Tabs.TabList Component - API Props
 
@@ -94,26 +99,27 @@ export default App;
 | `type`           | `"line"`      | Optional. Defines the style of the tab list. Options: `"card"`, `"line"`, or `"segment"`.                                                                       |
 | `className`      | `"tab-list"`  | Optional. Custom class name for styling the tab list container.                                                                                                 |
 | `justifyContent` | `"start"`     | Optional. Aligns tab items. Works only when `type` is `"line"`. Options: `"space-between"`, `"space-around"`, `"space-evenly"`, `"start"`, `"center"`, `"end"`. |
-| `size`           | `"small"`     | Optional. Size of the tab buttons. Options: `"small"`, `"medium"`, `"large"`.                                                                                   |
+| `size`           | `"medium"`    | Optional. Size of the tab buttons. Options: `"small"`, `"medium"`, `"large"`.                                                                                   |
 | `onTabChange`    | —             | Required. Event triggered when the active tab changes. Receives the tab index as an argument.                                                                   |
 
 ### Tabs.Tab Component - API Props
 
-| Prop        | Default Value          | Explanation                                                               |
-| ----------- | ---------------------- | ------------------------------------------------------------------------- |
-| `disabled`  | `false`                | Optional. Disables the tab if set to `true`. Prevents selection on click. |
-| `className` | `"tab-list__tab-item"` | Optional. Custom class for styling the individual tab.                    |
-| `children`  | —                      | Required. React element to render tab label, icon, or any custom content. |
+| Prop        | Default Value | Explanation                                                               |
+| ----------- | ------------- | ------------------------------------------------------------------------- |
+| `disabled`  | `false`       | Optional. Disables the tab if set to `true`. Prevents selection on click. |
+| `className` | `"tab-item"`  | Optional. Custom class for styling the individual tab.                    |
+| `children`  | —             | Required. React element to render tab label, icon, or any custom content. |
 
 ### Tabs.TabPanel Component - API Props
 
-| Prop       | Default Value | Explanation                                      |
-| ---------- | ------------- | ------------------------------------------------ |
-| `children` | —             | Required. React element to display in the panel. |
+| Prop        | Default Value | Explanation                                                  |
+| ----------- | ------------- | ------------------------------------------------------------ | --- |
+| `children`  | —             | Required. React element to display in the panel.             |
+| `className` | `"tab-panel"` | Optional. Custom class for styling the individual tab panel. |     |
 
 ## 🛣️ Roadmap
 
-- [x] Vertical Orientation Support – Add support for vertical tab layouts (Currently horizontal only)
+- [✅] Vertical Orientation Support – Add support for vertical tab layouts
 
 - [ ] RTL Support – Enable compatibility for RTL languages (e.g. Arabic, Hebrew)
 

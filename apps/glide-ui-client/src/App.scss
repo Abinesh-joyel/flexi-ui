@@ -74,14 +74,14 @@ a {
     padding: 1rem 2rem;
 }
 
-.tabs-view {
+.views {
     h2 {
         color: $color-primary;
         @extend .mb-3;
     }
 }
 
-.tab-view {
+.view {
     .form-control {
         margin-bottom: 1rem;
     }
@@ -91,9 +91,7 @@ a {
         align-items: center;
     }
 
-    .radio-type,
-    .radio-size,
-    .radio-justify {
+    .radio-horizontal {
         display: flex;
         align-items: center;
         * {
@@ -106,5 +104,12 @@ a {
 
     .radio-note {
         color: $color-note;
+    }
+}
+
+// overriding package style
+.view {
+    .tab-panel {
+        padding: 0.5rem;
     }
 }

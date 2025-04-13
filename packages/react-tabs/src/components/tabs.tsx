@@ -13,7 +13,7 @@ interface TabsExtend {
 }
 
 const Tabs: React.FC<TabsProps> & TabsExtend = props => {
-  const { children, value } = props;
+  const { children, value, orientation = 'horizontal' } = props;
 
   const activeTabIndex = value ?? 0;
 
@@ -38,14 +38,13 @@ const Tabs: React.FC<TabsProps> & TabsExtend = props => {
   };
 
   return (
-    <div className="glide-ui-tabs">
+    <div className={`glide-ui-tabs ${orientation}`}>
       {cloneElement(tabsListChild as React.ReactElement, {
         activeTabIndex,
+        orientation,
       })}
 
-      <div className="glide-ui-tabs__tab-panels">
-        {restChild.map(renderChild)}
-      </div>
+      <div className="glide-ui-tab-panels">{restChild.map(renderChild)}</div>
     </div>
   );
 };
