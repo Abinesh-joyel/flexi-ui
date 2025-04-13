@@ -29,7 +29,8 @@ try {
   // 3. Clear the old contents
   run(`rm -rf ${TEMP_DIR}/*`);
 
-  // 4. Copy new dist contents
+  // 4. Build and Copy new dist contents
+  run('pnpm -F glide-ui-client build');
   run(`cp -r ${DIST_DIR}/* ${TEMP_DIR}`);
 
   // 5. Commit and push
