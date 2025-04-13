@@ -13,6 +13,7 @@
     "dev": "pnpm -r run dev",
     "client-dev": "pnpm --filter glide-ui-client dev",
     "test": "vitest",
+    "deploy:client": "node scripts/deploy-client.js",
     "release": "node scripts/release.js"
   },
   "dependencies": {
