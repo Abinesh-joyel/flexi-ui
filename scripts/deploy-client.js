@@ -1,31 +1,45 @@
-// deploy-gh-pages.js
 import { execSync } from 'child_process';
-import path from 'path';
-import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const DIST_DIR = path.join(__dirname, 'apps/glide-ui-client/dist');
+// Recreate __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Constants
+const DIST_DIR = join(__dirname, '../apps/glide-ui-client/dist');
+const TEMP_DIR = join(__dirname, '.gh-pages-temp');
 const BRANCH = 'gh-pages';
-const TEMP_DIR = '.gh-pages-temp';
 
-if (!fs.existsSync(DIST_DIR)) {
-  console.error('❌ Build directory not found. Make sure to build first.');
-  process.exit(1);
-}
-
-console.log('🚀 Deploying to GitHub Pages...');
+const run = cmd => {
+  console.log(`\n$ ${cmd}`);
+  execSync(cmd, { stdio: 'inherit' });
+};
 
 try {
-  execSync(`rm -rf ${TEMP_DIR}`);
-  execSync(
+  // 1. Clean up old temp directory
+  run(`rm -rf ${TEMP_DIR}`);
+
+  // 2. Clone gh-pages branch into temp directory
+  run(
     `git clone -b ${BRANCH} --single-branch $(git config --get remote.origin.url) ${TEMP_DIR}`
   );
-  execSync(`rm -rf ${TEMP_DIR}/*`);
-  execSync(`cp -r ${DIST_DIR}/* ${TEMP_DIR}`);
-  execSync(
+
+  // 3. Clear the old contents
+  run(`rm -rf ${TEMP_DIR}/*`);
+
+  // 4. Copy new dist contents
+  run(`cp -r ${DIST_DIR}/* ${TEMP_DIR}`);
+
+  // 5. Commit and push
+  run(
     `cd ${TEMP_DIR} && git add . && git commit -m "deploy: update GitHub Pages" && git push`
   );
-  execSync(`rm -rf ${TEMP_DIR}`);
-  console.log('✅ Deployed successfully to GitHub Pages!');
+
+  // 6. Clean up
+  run(`rm -rf ${TEMP_DIR}`);
+
+  console.log('\n✅ Deployment successful!');
 } catch (err) {
   console.error('❌ Deployment failed:', err.message);
   process.exit(1);
