@@ -88,7 +88,7 @@ export default App;
 | Prop          | Default Value  | Explanation                                                                                                                                                             |
 | ------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `children`    | —              | Required. Should include one `Tabs.TabList` and one or more `Tabs.TabPanel`.                                                                                            |
-| `orientation` | `"horizontal"` | optional. Defines the orientation of the tab. Options: `"horizontal",        vertical`.                                                                                 |
+| `orientation` | `"horizontal"` | optional. Defines the orientation of the tab. Options: `"horizontal"`, `"vertical"`.                                                                                    |
 | `value`       | `0`            | Required. Index of the active tab. Used to control the selected tab programmatically. Listen to `onTabChange` event on `Tabs.TabList` component to get the active index |
 
 ### Tabs.TabList Component - API Props
@@ -113,9 +113,9 @@ export default App;
 ### Tabs.TabPanel Component - API Props
 
 | Prop        | Default Value | Explanation                                                  |
-| ----------- | ------------- | ------------------------------------------------------------ | --- |
+| ----------- | ------------- | ------------------------------------------------------------ |
 | `children`  | —             | Required. React element to display in the panel.             |
-| `className` | `"tab-panel"` | Optional. Custom class for styling the individual tab panel. |     |
+| `className` | `"tab-panel"` | Optional. Custom class for styling the individual tab panel. |
 
 ## 🛣️ Roadmap
 
