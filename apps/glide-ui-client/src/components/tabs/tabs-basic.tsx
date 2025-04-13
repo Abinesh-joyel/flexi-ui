@@ -206,7 +206,7 @@ const TabBasic = () => {
       </div>
       <div className="card-footer">
         <a
-          href="https://github.com/Abinesh-joyel/glide-ui/tree/master/apps/glide-ui-client/src/components/tabs/tab-basic.tsx"
+          href="https://github.com/Abinesh-joyel/glide-ui/blob/master/apps/glide-ui-client/src/components/tabs/tabs-basic.tsx"
           target="_blank"
         >
           Code Link

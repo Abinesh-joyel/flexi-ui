@@ -57,9 +57,14 @@ a {
         width: 100%;
         padding: 0.75rem 1rem;
         color: #000;
-        &:hover {
+        font-weight: 400;
+        &:hover,
+        &.active {
             background-color: $color-link-background;
-            color: $color-primary
+            color: $color-primary;
+        }
+        &.active {
+            font-weight: 500;
         }
     }
 }

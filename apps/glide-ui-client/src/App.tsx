@@ -1,22 +1,9 @@
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 
 import TabsView from './views/tabs';
 import ListBoxView from './views/listbox';
-
+import { navItems } from './router';
 import './App.scss';
-
-const navItems = [
-  {
-    id: 'tabs',
-    name: 'Tabs',
-    path: '/',
-  },
-  {
-    id: 'listbox',
-    name: 'Listbox',
-    path: '/listbox',
-  },
-];
 
 function App() {
   return (
@@ -28,7 +15,7 @@ function App() {
             <ul>
               {navItems.map(navItem => (
                 <li key={navItem.id}>
-                  <Link to={navItem.path}>{navItem.name}</Link>
+                  <NavLink to={navItem.path}>{navItem.name}</NavLink>
                 </li>
               ))}
             </ul>
