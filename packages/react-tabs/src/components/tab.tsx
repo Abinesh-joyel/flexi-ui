@@ -7,7 +7,7 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
     index,
     activeTabIndex,
     disabled = false,
-    className = 'tab-list__tab-item',
+    className = 'tab-item',
     onTabChange = () => {},
   } = props;
   const isActive = activeTabIndex === index;
@@ -29,11 +29,11 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props, ref) => {
       disabled={disabled}
       aria-selected={isActive}
       aria-disabled={disabled}
-      className={`tab-list__tab ${className}`}
+      className={`glide-ui-tab-item ${className}`}
       onClick={onSelected}
     >
-      {children}
-      <span className="tab-list__indicator"></span>
+      <span className="tab-item-text">{children}</span>
+      <span className="tab-item-indicator"></span>
     </button>
   );
 });

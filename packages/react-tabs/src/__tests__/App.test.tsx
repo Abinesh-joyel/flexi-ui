@@ -1,11 +1,11 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
-import RenderTabs from './renderTabs';
+import App from '../App';
 
 describe('Tabs Component', () => {
   it('renders the Tabs component with TabList and TabPanels', () => {
-    render(<RenderTabs />);
+    render(<App />);
 
     // Check if all tabs are rendered
     const tabs = screen.getAllByTestId('tab');
@@ -21,7 +21,7 @@ describe('Tabs Component', () => {
   });
 
   it('switches tabs when a tab is clicked', () => {
-    render(<RenderTabs />);
+    render(<App />);
 
     // Check if the second tab is selected
     const tabs = screen.getAllByTestId('tab');

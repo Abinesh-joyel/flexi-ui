@@ -8,9 +8,10 @@ const TabList: React.FC<TabListProps> = props => {
     children,
     activeTabIndex,
     type = 'line',
-    size = 'small',
+    size = 'medium',
     className = 'tab-list',
     justifyContent = 'start',
+    orientation = 'horizontal',
     onTabChange = () => {},
   } = props;
 
@@ -19,6 +20,7 @@ const TabList: React.FC<TabListProps> = props => {
   const { handleKeyDown } = usekeyBoardEvent(
     activeTabIndex as number,
     totalTabs,
+    orientation,
     (index: number) => {
       onTabChange(index);
       tabRef.current[index]?.focus();
@@ -42,10 +44,10 @@ const TabList: React.FC<TabListProps> = props => {
 
   return (
     <div
-      className={`glide-ui-tabs__tab-list glide-ui-tabs__tab-list--${type} ${justifyContent} ${size} ${className}`}
+      className={`glide-ui-tab-list tab-type-${type} ${justifyContent} ${size} ${className}`}
       role="tablist"
       data-testid="tab-list"
-      aria-orientation="horizontal"
+      aria-orientation={orientation}
       onKeyDown={handleKeyDown}
     >
       {Children.map(children, renderChild)}
