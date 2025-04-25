@@ -1,0 +1,26 @@
+{
+  "name": "@glide-ui/react-listbox",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "An accessible React Listbox component for custom select menus.",
+  "author": "Abinesh Joyel",
+  "license": "MIT",
+  "homepage": "https://github.com/Abinesh-joyel/glide-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abinesh-joyel/glide-ui/tree/master/packages/react-listbox"
+  },
+  "bugs": {
+    "url": "https://github.com/Abinesh-joyel/glide-ui/issues"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  }
+}
