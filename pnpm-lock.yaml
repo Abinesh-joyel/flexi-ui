@@ -90,6 +90,9 @@ importers:
 
   apps/glide-ui-client:
     dependencies:
+      '@glide-ui/react-listbox':
+        specifier: workspace:*
+        version: link:../../packages/react-listbox
       '@glide-ui/react-tabs':
         specifier: workspace:*
         version: link:../../packages/react-tabs

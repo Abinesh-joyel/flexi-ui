@@ -6,6 +6,6 @@
       "@glide-ui/*": ["packages/*/src"]
     },
   },
-  "include": ["packages/**/src", "vite.config.ts"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["packages/**/src", "apps/**/src", "vite.config.ts"],
+  "exclude": ["dist", "node_modules"],
 }

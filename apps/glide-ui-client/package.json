@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@glide-ui/react-tabs": "workspace:*",
+    "@glide-ui/react-listbox": "workspace:*",
     "react-router-dom": "^6.30.0"
   }
 }

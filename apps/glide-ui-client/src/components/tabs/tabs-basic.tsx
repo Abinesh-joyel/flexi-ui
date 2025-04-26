@@ -1,6 +1,5 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import Tabs from '@glide-ui/react-tabs';
-import { useState } from 'react';
 
 type Type = 'line' | 'segment' | 'card';
 type Size = 'small' | 'medium' | 'large';

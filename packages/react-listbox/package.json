@@ -14,6 +14,23 @@
   "bugs": {
     "url": "https://github.com/Abinesh-joyel/glide-ui/issues"
   },
+  "keywords": [
+    "react",
+    "listbox",
+    "react-listbox",
+    "accessible-listbox",
+    "flexible-listbox"
+  ],
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
