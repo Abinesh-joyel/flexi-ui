@@ -1,10 +1,7 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".", // enables absolute imports
-    "paths": {
-      "@glide-ui/*": ["packages/*/src"]
-    },
-  },
-  "include": ["packages", "apps"],
-  "exclude": ["dist", "build", "node_modules"],
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
 }
