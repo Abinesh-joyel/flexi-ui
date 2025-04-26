@@ -1,7 +1,11 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
+  "extends": ["./tsconfig.app.json", "./tsconfig.node.json"],
+  "compilerOptions": {    
+    "baseUrl": ".", // enables absolute imports
+    "paths": {
+      "@glide-ui/*": ["packages/*/src"]
+    },
+  },
+  "include": ["packages/**/src", "vite.config.ts"],
+  "exclude": ["dist", "node_modules"]
 }
