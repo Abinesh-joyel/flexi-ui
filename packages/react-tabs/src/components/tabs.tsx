@@ -13,7 +13,12 @@ interface TabsExtend {
 }
 
 const Tabs: React.FC<TabsProps> & TabsExtend = props => {
-  const { children, value, orientation = 'horizontal' } = props;
+  const {
+    value,
+    children,
+    forceRender = false,
+    orientation = 'horizontal',
+  } = props;
 
   const activeTabIndex = value ?? 0;
 
@@ -32,6 +37,7 @@ const Tabs: React.FC<TabsProps> & TabsExtend = props => {
     const isActive = index === activeTabIndex;
     return cloneElement(childElement, {
       key: tabPanelId,
+      forceRender,
       isActive,
       index,
     });

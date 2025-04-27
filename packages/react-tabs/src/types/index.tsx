@@ -15,6 +15,7 @@ type Orientation = 'horizontal' | 'vertical';
 export interface TabsProps {
   children: React.ReactNode;
   orientation?: Orientation;
+  forceRender?: boolean;
   value?: number;
 }
 export interface TabListProps {
@@ -42,4 +43,5 @@ export interface TabPanelProps {
   index?: number;
   isActive?: boolean;
   className?: string;
+  forceRender?: boolean;
 }

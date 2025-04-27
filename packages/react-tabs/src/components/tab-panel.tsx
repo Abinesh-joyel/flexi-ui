@@ -1,7 +1,13 @@
 import { TabPanelProps } from '../types';
 
 const TabPanel: React.FC<TabPanelProps> = props => {
-  const { children, isActive, index, className = 'tab-panel' } = props;
+  const {
+    children,
+    isActive,
+    index,
+    forceRender,
+    className = 'tab-panel',
+  } = props;
   const id = `glide-ui-tabpanel-${index}`;
   const labelledby = `glide-ui-tab-${index}`;
   return (
@@ -14,7 +20,7 @@ const TabPanel: React.FC<TabPanelProps> = props => {
       aria-labelledby={labelledby}
       className={`glide-ui-tab-panel ${className}`}
     >
-      {children}
+      {forceRender || isActive ? children : null}
     </div>
   );
 };
