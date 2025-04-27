@@ -1,7 +1,7 @@
 {
   "name": "@glide-ui/react-listbox",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "An accessible React Listbox component for custom select menus.",
   "author": "Abinesh Joyel",
