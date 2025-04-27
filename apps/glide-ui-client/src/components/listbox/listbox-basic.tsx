@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Listbox from '@glide-ui/react-listbox';
+import { COMPONENT_PATH } from '../../constants';
 
 const Options = [
   { id: 1, label: 'United States', value: 'us' },
@@ -21,7 +22,7 @@ const ListboxBasic = () => {
       <div className="card-content">
         <div className="form-group">
           <div className="form-control radio-group">
-            <input type="checkbox" id="multiple" name="multiple" />
+            <input disabled type="checkbox" id="multiple" name="multiple" />
             <label htmlFor="multiple">Multiple</label>
           </div>
         </div>
@@ -37,6 +38,11 @@ const ListboxBasic = () => {
             </Listbox.Option>
           ))}
         </Listbox>
+      </div>
+      <div className="card-footer">
+        <a href={`${COMPONENT_PATH}listbox/listbox-basic.tsx`} target="_blank">
+          Code Link
+        </a>
       </div>
     </div>
   );

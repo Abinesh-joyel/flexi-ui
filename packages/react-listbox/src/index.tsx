@@ -1,2 +1,2 @@
-export { default } from './components/list-box';
+export { default } from './components/listbox';
 import './scss/style.scss';

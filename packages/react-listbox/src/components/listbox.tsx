@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import ListboxOption from './list-box-option';
+import ListboxOption from './listbox-option';
 import { useClickAway } from '../hooks/useClickAway';
 import { ListboxOptionProps, ListboxProps, Option } from '../types';
 
@@ -58,7 +58,7 @@ const Listbox: React.FC<ListboxProps> & ListboxExtend = props => {
     return createElement(
       ListboxOption,
       { value: optionValue, label, selected, onSelected, key: id },
-      (renderOption as Function)({ ...option, selected }, index)
+      (renderOption as Function)({ ...option }, selected, index)
     );
   };
 

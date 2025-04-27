@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Listbox from './components/list-box';
+import Listbox from './components/listbox';
 import './App.scss';
 
 const Options = [
@@ -39,8 +39,8 @@ function App() {
     }
   };
 
-  // const renderOption = (option: any) => {
-  //   const { selected, label, value } = option;
+  // const renderOption = (option: any, selected) => {
+  //   const { label, value } = option;
   //   const flagUrl = `https://flagcdn.com/w20/${value}.png`;
   //   return (
   //     <div className={`custom-option ${selected ? 'selected' : ''}`.trimEnd()}>
@@ -62,9 +62,11 @@ function App() {
 
   return (
     <div className="app">
-      <button type="button" onClick={addCountries}>
-        Add country
-      </button>
+      <div>
+        <button type="button" onClick={addCountries}>
+          Add country
+        </button>
+      </div>
       <Listbox value={value} label="Select a country" onChange={setValue}>
         {country.map(option => (
           <Listbox.Option

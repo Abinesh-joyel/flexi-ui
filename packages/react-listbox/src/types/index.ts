@@ -9,7 +9,11 @@ export interface ListboxProps {
   label: string;
   options?: Option[];
   children?: React.ReactNode;
-  renderOption?: (option: Option, index: number) => React.ReactNode;
+  renderOption?: (
+    option: Option,
+    selected: boolean,
+    index: number
+  ) => React.ReactNode;
   renderValue?: (label: string, value: string) => React.ReactNode;
   onChange: (value: string) => void;
 }

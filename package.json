@@ -11,6 +11,7 @@
   "scripts": {
     "build": "pnpm -r run build",
     "dev": "pnpm -r run dev",
+    "dev:pkg": "node scripts/dev-pkg.js",
     "dev:client": "pnpm --filter glide-ui-client dev",
     "deploy:client": "node scripts/deploy-client.js",
     "release": "node scripts/release.js",

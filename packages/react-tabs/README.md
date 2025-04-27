@@ -93,29 +93,29 @@ export default App;
 
 ### Tabs.TabList Component - API Props
 
-| Prop             | Default Value | Explanation                                                                                                                                                     |
-| ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`       | —             | Required. Should include one or more `Tabs.Tab` components.                                                                                                     |
-| `type`           | `"line"`      | Optional. Defines the style of the tab list. Options: `"card"`, `"line"`, or `"segment"`.                                                                       |
-| `className`      | `"tab-list"`  | Optional. Custom class name for styling the tab list container.                                                                                                 |
-| `justifyContent` | `"start"`     | Optional. Aligns tab items. Works only when `type` is `"line"`. Options: `"space-between"`, `"space-around"`, `"space-evenly"`, `"start"`, `"center"`, `"end"`. |
-| `size`           | `"medium"`    | Optional. Size of the tab buttons. Options: `"small"`, `"medium"`, `"large"`.                                                                                   |
-| `onTabChange`    | —             | Required. Event triggered when the active tab changes. Receives the tab index as an argument.                                                                   |
+| Prop             | Default Value               | Explanation                                                                                                                                                     |
+| ---------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`       | `"React.ReactNode"`         | Required. Should include one or more `Tabs.Tab` components.                                                                                                     |
+| `type`           | `"line"`                    | Optional. Defines the style of the tab list. Options: `"card"`, `"line"`, or `"segment"`.                                                                       |
+| `className`      | `"tab-list"`                | Optional. Custom class name for styling the tab list container.                                                                                                 |
+| `justifyContent` | `"start"`                   | Optional. Aligns tab items. Works only when `type` is `"line"`. Options: `"space-between"`, `"space-around"`, `"space-evenly"`, `"start"`, `"center"`, `"end"`. |
+| `size`           | `"medium"`                  | Optional. Size of the tab buttons. Options: `"small"`, `"medium"`, `"large"`.                                                                                   |
+| `onTabChange`    | `"(index: number) => void"` | Required. Event triggered when the active tab changes. Receives the tab index as an argument.                                                                   |
 
 ### Tabs.Tab Component - API Props
 
-| Prop        | Default Value | Explanation                                                               |
-| ----------- | ------------- | ------------------------------------------------------------------------- |
-| `disabled`  | `false`       | Optional. Disables the tab if set to `true`. Prevents selection on click. |
-| `className` | `"tab-item"`  | Optional. Custom class for styling the individual tab.                    |
-| `children`  | —             | Required. React element to render tab label, icon, or any custom content. |
+| Prop        | Default Value       | Explanation                                                               |
+| ----------- | ------------------- | ------------------------------------------------------------------------- |
+| `disabled`  | `false`             | Optional. Disables the tab if set to `true`. Prevents selection on click. |
+| `className` | `"tab-item"`        | Optional. Custom class for styling the individual tab.                    |
+| `children`  | `"React.ReactNode"` | Required. React element to render tab label, icon, or any custom content. |
 
 ### Tabs.TabPanel Component - API Props
 
-| Prop        | Default Value | Explanation                                                  |
-| ----------- | ------------- | ------------------------------------------------------------ |
-| `children`  | —             | Required. React element to display in the panel.             |
-| `className` | `"tab-panel"` | Optional. Custom class for styling the individual tab panel. |
+| Prop        | Default Value       | Explanation                                                  |
+| ----------- | ------------------- | ------------------------------------------------------------ |
+| `children`  | `"React.ReactNode"` | Required. React element to display in the panel.             |
+| `className` | `"tab-panel"`       | Optional. Custom class for styling the individual tab panel. |
 
 ## 🛣️ Roadmap
 
