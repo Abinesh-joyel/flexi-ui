@@ -1,29 +1,26 @@
 {
-  "name": "@glide-ui/react-tabs",
-  "version": "0.0.6",
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "@glide-ui/react-listbox",
   "private": false,
-  "description": "A flexible and customizable tab component for React applications",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "An accessible React Listbox component for custom select menus.",
   "author": "Abinesh Joyel",
   "license": "MIT",
   "homepage": "https://github.com/Abinesh-joyel/glide-ui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Abinesh-joyel/glide-ui/tree/master/packages/react-tabs"
+    "url": "https://github.com/Abinesh-joyel/glide-ui/tree/master/packages/react-listbox"
   },
   "bugs": {
     "url": "https://github.com/Abinesh-joyel/glide-ui/issues"
   },
   "keywords": [
     "react",
-    "tabs",
-    "react-tabs",
-    "accessible-tabs",
-    "flexible-tabs"
+    "listbox",
+    "react-listbox",
+    "accessible-listbox",
+    "flexible-listbox"
   ],
-  "type": "module",
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -40,7 +37,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview"
   }
 }

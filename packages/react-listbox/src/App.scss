@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 1rem;
+
+  button {
+    margin-bottom: 1rem;
+  }
+
+  .custom-option,
+  .custom-value {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@import url('./scss/style.scss');

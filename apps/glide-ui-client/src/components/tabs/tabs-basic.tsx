@@ -1,6 +1,6 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import Tabs from '@glide-ui/react-tabs';
-import { useState } from 'react';
+import { COMPONENT_PATH } from '../../constants';
 
 type Type = 'line' | 'segment' | 'card';
 type Size = 'small' | 'medium' | 'large';
@@ -235,10 +235,7 @@ const TabBasic = () => {
         </Tabs>
       </div>
       <div className="card-footer">
-        <a
-          href="https://github.com/Abinesh-joyel/glide-ui/blob/master/apps/glide-ui-client/src/components/tabs/tabs-basic.tsx"
-          target="_blank"
-        >
+        <a href={`${COMPONENT_PATH}tabs/tabs-basic.tsx`} target="_blank">
           Code Link
         </a>
       </div>

@@ -4,4 +4,8 @@
 
 ✅ pnpm changeset publish → Publish changed packages to NPM
 
-pnpm publish --filter @glide-ui/react-tabs -> publish the updated files in npm
+pnpm -r -> It runs the command you give in all packages inside your monorepo
+
+pnpm publish --filter @glide-ui/react-tabs -> To manually publish a package to npm after version npm
+
+pnpm --filter @glide-ui/react-tabs dev -> To run a single package in dev mode
